@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background-color: #e0e5ec;
+    color: #4a4a4a;
+  }
+
+/* Neomorphic styles */
+.neomorphic {
+  border-radius: 20px;
+  background: #e0e0e0;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  border: none;
+}
+
+.card.neomorphic {
+  padding: 20px;
+}
+
+.form-control.neomorphic {
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.btn.neomorphic {
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn.neomorphic:active {
+  box-shadow: inset 4px 4px 8px #bebebe, inset -4px -4px 8px #ffffff;
+}
+
+.btn-toggle.neomorphic {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn-primary.neomorphic {
+  background: linear-gradient(145deg, #3498db, #2980b9);
+  color: white;
+}
+
+/* Add more custom styles as needed */

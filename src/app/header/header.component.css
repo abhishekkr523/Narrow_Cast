@@ -1,0 +1,101 @@
+:root {
+  --bg-color: #e0e5ec;
+  --text-color: #4a4a4a;
+  --shadow-light: #ffffff;
+  --shadow-dark: #a3b1c6;
+}
+
+.neomorphic-header {
+  background-color: #e0e5ec !important;
+  padding: 15px 0;
+  box-shadow: 
+    8px 8px 16px #bec3c9,
+    -8px -8px 16px #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  padding: 10px 20px;
+}
+
+.neomorphic-text {
+  color: #4a4a4a !important;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px #ffffff, -2px -2px 4px #bec3c9;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-left: 20px;
+}
+
+.neomorphic-link {
+  color: #4a4a4a !important;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  margin: 0 5px;
+  padding: 8px 15px !important;
+  box-shadow: 
+    4px 4px 8px #bec3c9,
+    -4px -4px 8px #ffffff;
+}
+
+.neomorphic-link:hover, .neomorphic-link.active {
+  box-shadow: 
+    inset 4px 4px 8px #bec3c9,
+    inset -4px -4px 8px #ffffff;
+}
+
+.neomorphic-button {
+  background-color: #e0e5ec !important;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  color: #4a4a4a;
+  cursor: pointer;
+  box-shadow: 
+    4px 4px 8px #bec3c9,
+    -4px -4px 8px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.neomorphic-button:hover {
+  box-shadow: 
+    6px 6px 10px #bec3c9,
+    -6px -6px 10px #ffffff;
+}
+
+.neomorphic-button:active {
+  box-shadow: 
+    inset 4px 4px 8px #bec3c9,
+    inset -4px -4px 8px #ffffff;
+}
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #e0e5ec;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 15px;
+    box-shadow: 
+      inset 4px 4px 8px #bec3c9,
+      inset -4px -4px 8px #ffffff;
+  }
+}

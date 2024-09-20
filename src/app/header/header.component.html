@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light neomorphic-header">
+  <div class="container">
+    <a class="navbar-brand neomorphic-text" href="#">NarrowCast</a>
+    <button class="navbar-toggler neomorphic-button" type="button" (click)="toggleMenu()" aria-controls="navbarNav" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [class.show]="menuOpen" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link neomorphic-link" routerLink="/home" routerLinkActive="active">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neomorphic-link" routerLink="/about" routerLinkActive="active">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neomorphic-link" routerLink="/contact" routerLinkActive="active">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neomorphic-link" routerLink="/our-team" routerLinkActive="active">Our Team</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neomorphic-link" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link neomorphic-link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

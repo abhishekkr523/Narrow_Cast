@@ -1,0 +1,29 @@
+<div class="signup-container">
+  <div class="neomorphic-card">
+    <div class="toggle-container">
+      <button class="neomorphic-button toggle-button" (click)="toggleForm()">
+        {{ isSignUp ? 'Switch to Sign In' : 'Switch to Sign Up' }}
+      </button>
+    </div>
+    
+    <h2 class="neomorphic-text">{{ isSignUp ? 'Sign Up' : 'Sign In' }}</h2>
+    
+    <form>
+      <div class="form-group" *ngIf="isSignUp">
+        <input type="text" class="neomorphic-input" placeholder="Full Name">
+      </div>
+      <div class="form-group">
+        <input type="email" class="neomorphic-input" placeholder="Email">
+      </div>
+      <div class="form-group">
+        <input type="password" class="neomorphic-input" placeholder="Password">
+      </div>
+      <div class="form-group" *ngIf="isSignUp">
+        <input type="password" class="neomorphic-input" placeholder="Confirm Password">
+      </div>
+      <button type="submit" class="neomorphic-button submit-button">
+        {{ isSignUp ? 'Sign Up' : 'Sign In' }}
+      </button>
+    </form>
+  </div>
+</div>
