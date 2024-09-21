@@ -1,30 +1,36 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light neomorphic-header">
-  <div class="container">
-    <a class="navbar-brand neomorphic-text" href="#">NarrowCast</a>
-    <button class="navbar-toggler neomorphic-button" type="button" (click)="toggleMenu()" aria-controls="navbarNav" [attr.aria-expanded]="menuOpen" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Narrow Cast</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" [class.show]="menuOpen" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav me-auto">
         <li class="nav-item">
-          <a class="nav-link neomorphic-link" routerLink="/home" routerLinkActive="active">Home</a>
+          <a class="nav-link" routerLink="/" routerLinkActive="active-link" [routerLinkActiveOptions]="{exact: true}">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Features
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/feature1" routerLinkActive="active-link">Feature 1</a></li>
+            <li><a class="dropdown-item" routerLink="/feature2" routerLinkActive="active-link">Feature 2</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" routerLink="/all-features" routerLinkActive="active-link">All Features</a></li>
+          </ul>
         </li>
         <li class="nav-item">
-          <a class="nav-link neomorphic-link" routerLink="/about" routerLinkActive="active">About</a>
+          <a class="nav-link" routerLink="/pricing" routerLinkActive="active-link">Pricing</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link neomorphic-link" routerLink="/contact" routerLinkActive="active">Contact</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link neomorphic-link" routerLink="/our-team" routerLinkActive="active">Our Team</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link neomorphic-link" routerLink="/login" routerLinkActive="active">Login</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link neomorphic-link" routerLink="/signup" routerLinkActive="active">Sign Up</a>
+          <a class="nav-link" routerLink="/contact" routerLinkActive="active-link">Contact</a>
         </li>
       </ul>
+      <div class="auth-buttons">
+        <a class="nav-link login" routerLink="/login" routerLinkActive="active-link">Login</a>
+        <a class="nav-link signup" routerLink="/signup" routerLinkActive="active-link">Sign Up</a>
+      </div>
     </div>
   </div>
 </nav>

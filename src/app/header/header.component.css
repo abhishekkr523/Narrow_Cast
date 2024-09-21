@@ -6,11 +6,9 @@
 }
 
 .neomorphic-header {
-  background-color: #e0e5ec !important;
+  background-color: transparent !important;
   padding: 15px 0;
-  box-shadow: 
-    8px 8px 16px #bec3c9,
-    -8px -8px 16px #ffffff;
+
 }
 
 .container {
@@ -26,10 +24,10 @@
 }
 
 .neomorphic-text {
-  color: #4a4a4a !important;
+  /* color: #4a4a4a !important; */
   font-size: 24px;
   font-weight: bold;
-  text-shadow: 2px 2px 4px #ffffff, -2px -2px 4px #bec3c9;
+  /* text-shadow: 2px 2px 4px #ffffff, -2px -2px 4px #bec3c9; */
 }
 
 .nav-links {
@@ -51,9 +49,7 @@
   transition: all 0.3s ease;
   margin: 0 5px;
   padding: 8px 15px !important;
-  box-shadow: 
-    4px 4px 8px #bec3c9,
-    -4px -4px 8px #ffffff;
+ 
 }
 
 .neomorphic-link:hover, .neomorphic-link.active {
@@ -70,9 +66,9 @@
   font-size: 16px;
   color: #4a4a4a;
   cursor: pointer;
-  box-shadow: 
+  /* box-shadow: 
     4px 4px 8px #bec3c9,
-    -4px -4px 8px #ffffff;
+    -4px -4px 8px #ffffff; */
   transition: all 0.3s ease;
 }
 
@@ -94,8 +90,182 @@
     border-radius: 15px;
     padding: 15px;
     margin-top: 15px;
-    box-shadow: 
+    /* box-shadow: 
       inset 4px 4px 8px #bec3c9,
-      inset -4px -4px 8px #ffffff;
+      inset -4px -4px 8px #ffffff; */
+  }
+}
+
+.navbar {
+  /* background-color: rgba(255, 255, 255, 0.1); */
+  backdrop-filter: blur(10px);
+  padding: 1rem 2rem;
+}
+
+.navbar-brand {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 2rem;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #f0f0f0;
+}
+
+.nav-link {
+  color: #fff;
+  margin: 0 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+/* .nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background-color: #fff;
+  transition: all 0.3s ease;
+} */
+
+/* .nav-link:hover::after {
+  width: 100%;
+  left: 0;
+} */
+
+.active-link {
+  font-weight: bold;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+  }
+}
+
+.dropdown-menu {
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: none;
+}
+
+.dropdown-item {
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.dropdown-item:hover, .dropdown-item:focus {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.dropdown-divider {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.nav-link, .navbar-nav .nav-link.show {
+  color: #fff;
+}
+
+.nav-link:focus, .nav-link:hover, .navbar-nav .nav-link.show:focus, .navbar-nav .nav-link.show:hover {
+  color: #f0f0f0;
+}
+
+.login {
+  border: 1px thin gray;
+  background-color: transparent;
+  border-radius: 20px;
+  padding: 1rem;
+  color: white;
+  margin: 0 1rem;
+}
+
+.navbar-nav {
+  align-items: center;
+}
+
+.auth-buttons {
+  display: flex;
+  align-items: center;
+}
+
+.login, .signup {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  margin-left: 0.5rem;
+  font-weight: bold;
+}
+
+.login {
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgba(26, 0, 26, 0.5);
+  color: white;
+}
+
+.signup {
+  background-color: rgba(26, 0, 26, 0.5);
+  color: white;
+  position: relative;
+}
+
+.signup::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  border-radius: 22px;
+  z-index: -1;
+}
+
+.login:hover, .signup:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login:hover {
+  border-color: transparent;
+}
+
+.signup:hover::before {
+  filter: brightness(1.2);
+}
+
+@media (max-width: 991px) {
+  .auth-buttons {
+    margin-top: 1rem;
+    justify-content: center;
+  }
+
+  .login, .signup {
+    margin: 0 0.25rem;
   }
 }
