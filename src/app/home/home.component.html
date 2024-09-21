@@ -1,1 +1,105 @@
-<p>home works!</p>
+<div class="home-container">
+  <h1 class="main-title" style="margin-bottom: 0; font-size: 3.5rem">
+    AI-powered career guidance simplified
+  </h1>
+  <h1 class="sub-title" style="margin-bottom: 0">Quick summaries, smarter decisions</h1>
+  <p>
+    Simplifying career decisions with AI-powered video summaries and
+    personalized roadmaps.
+  </p>
+
+  <button class="cta-button" (click)="openModal()">Get Started</button>
+</div>
+
+<!-- Modal -->
+<div class="modal" *ngIf="isModalOpen">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">Get Started</h5>
+      <button type="button" class="close-button" (click)="closeModal()">&times;</button>
+    </div>
+    <div class="modal-body">
+      <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="courseSelect">Select Course</label>
+          <select id="courseSelect" [(ngModel)]="selectedCourse" name="course">
+            <option value="">Choose a course...</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Business">Business</option>
+            <option value="Medicine">Medicine</option>
+            <option value="Law">Law</option>
+            <option value="Arts and Humanities">Arts and Humanities</option>
+            <option value="Natural Sciences">Natural Sciences</option>
+            <option value="Social Sciences">Social Sciences</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="branchSelect">Select Branch</label>
+          <select id="branchSelect" [(ngModel)]="selectedBranch" name="branch">
+            <option value="">Choose a branch...</option>
+            <option value="Software Development">Software Development</option>
+            <option value="Data Science">Data Science</option>
+            <option value="Artificial Intelligence">Artificial Intelligence</option>
+            <option value="Cybersecurity">Cybersecurity</option>
+            <option value="Cloud Computing">Cloud Computing</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Finance">Finance</option>
+            <option value="Marketing">Marketing</option>
+          </select>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" (click)="closeModal()">Close</button>
+          <button type="submit" class="btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- New content starts here -->
+
+<!-- Hero Section -->
+<div class="hero-section">
+    <h1>Welcome to Narrow Cast</h1>
+    <p>AI-powered platform for personalized career guidance and learning.</p>
+    <a href="#features" class="learn-more-btn">Learn More</a>
+</div>
+
+<!-- Problem Section -->
+<div class="problem-section">
+    <h2>The Problem</h2>
+    <p>Students often struggle to choose the right career path due to information overload and lack of guidance. Whether in B.Tech, MBA, or other fields, they face a maze of options like AI, web development, finance, and more.</p>
+</div>
+
+<!-- Solution Section -->
+<div class="solution-section">
+    <h2>Our Solution</h2>
+    <p>Narrow Cast simplifies this process using AI-powered YouTube video summaries, personalized roadmaps, and interactive quizzes, helping students discover their interests and make informed career decisions.</p>
+</div>
+
+<!-- Features Section -->
+<div id="features" class="features-section">
+    <h2>Key Features</h2>
+    <div class="feature">
+        <h3>AI-Powered YouTube Video Summarizer</h3>
+        <p>Get concise summaries of educational videos, saving you time and helping you grasp concepts faster.</p>
+    </div>
+    <div class="feature">
+        <h3>Personalized Career Roadmaps</h3>
+        <p>Tailored learning paths for each career option, whether you're exploring web development, AI, or finance.</p>
+    </div>
+    <div class="feature">
+        <h3>Interactive Quizzes and Notes</h3>
+        <p>Test your knowledge with quizzes and review notes generated from AI-summarized content.</p>
+    </div>
+</div>
+
+<!-- Call to Action Section -->
+<div class="cta-section">
+    <h2>Start Your Journey with Narrow Cast</h2>
+    <p>Explore your career options with AI-powered guidance and efficient learning tools.</p>
+    <a href="#signup" class="signup-btn">Sign Up Now</a>
+</div>

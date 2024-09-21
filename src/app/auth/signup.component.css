@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: #e0e5ec;
+  /* background-color: #e0e5ec; */
   min-height: 100vh;
   padding: 40px 20px;
 }
@@ -12,11 +12,12 @@
 }
 
 .neomorphic-card {
-  background: #e0e5ec;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: 30px;
   box-shadow: 
-    20px 20px 60px #bec3c9,
-    -20px -20px 60px #ffffff;
+    20px 20px 60px rgba(0, 0, 0, 0.5),
+    -20px -20px 60px rgba(255, 255, 255, 0.1);
   padding: 40px;
   transition: all 0.3s ease;
   transform-style: preserve-3d;
@@ -26,8 +27,8 @@
 .neomorphic-card:hover {
   transform: rotateX(0deg) rotateY(0deg);
   box-shadow: 
-    25px 25px 75px #bec3c9,
-    -25px -25px 75px #ffffff;
+    25px 25px 75px rgba(0, 0, 0, 0.6),
+    -25px -25px 75px rgba(255, 255, 255, 0.1);
 }
 
 .toggle-container {
@@ -36,12 +37,12 @@
 }
 
 .neomorphic-text {
-  color: #4a4a4a;
+  color: #fff;
   text-align: center;
   margin-bottom: 30px;
   font-size: 28px;
   font-weight: bold;
-  text-shadow: 3px 3px 6px #ffffff, -3px -3px 6px #bec3c9;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
   transform: translateZ(20px);
 }
 
@@ -52,53 +53,54 @@
 
 .neomorphic-input {
   width: 100%;
-  background: #e0e5ec;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 15px;
   padding: 15px 20px;
   font-size: 16px;
-  color: #4a4a4a;
+  color: #fff;
   box-shadow: 
-    inset 8px 8px 16px #bec3c9,
-    inset -8px -8px 16px #ffffff;
+    inset 8px 8px 16px rgba(0, 0, 0, 0.2),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .neomorphic-input:focus {
   outline: none;
   box-shadow: 
-    inset 12px 12px 20px #bec3c9,
-    inset -12px -12px 20px #ffffff;
+    inset 12px 12px 20px rgba(0, 0, 0, 0.3),
+    inset -12px -12px 20px rgba(255, 255, 255, 0.1);
   transform: translateZ(5px);
 }
 
 .neomorphic-button {
-  background: #e0e5ec;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 15px;
   padding: 12px 25px;
   font-size: 16px;
   font-weight: bold;
-  color: #4a4a4a;
+  color: #fff;
   cursor: pointer;
   box-shadow: 
-    8px 8px 16px #bec3c9,
-    -8px -8px 16px #ffffff;
+    8px 8px 16px rgba(0, 0, 0, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   transform: translateZ(15px);
 }
 
 .neomorphic-button:hover {
   box-shadow: 
-    12px 12px 20px #bec3c9,
-    -12px -12px 20px #ffffff;
+    12px 12px 20px rgba(0, 0, 0, 0.4),
+    -12px -12px 20px rgba(255, 255, 255, 0.1);
   transform: translateY(-2px) translateZ(20px);
 }
 
 .neomorphic-button:active {
   box-shadow: 
-    inset 8px 8px 16px #bec3c9,
-    inset -8px -8px 16px #ffffff;
+    inset 8px 8px 16px rgba(0, 0, 0, 0.4),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.1);
   transform: translateY(0) translateZ(15px);
 }
 
