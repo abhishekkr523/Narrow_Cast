@@ -6,7 +6,8 @@
 }
 
 .neomorphic-footer {
-  background-color: #e0e5ec;
+  /* background-color: #e0e5ec; */
+  background-color: rgb(19 15 24 );
   padding: 40px 0 20px;
   box-shadow: 
     inset 0 8px 16px -8px #bec3c9,
