@@ -1,1 +1,42 @@
-<p>contact works!</p>
+<div class="contact-container">
+    <div class="neomorphic-card">
+      <h2 class="neomorphic-text">Contact Us</h2>
+      <div class="row">
+        <div class="col-md-6">
+          <!-- Add the ngForm directive to track the form status -->
+          <form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+            <div class="form-group">
+              <!-- Bind to contactForm (model) defined in the component -->
+              <input type="text" class="neomorphic-input" placeholder="Your Name" name="name" [(ngModel)]="contactFormModel.name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" class="neomorphic-input" placeholder="Your Email" name="email" [(ngModel)]="contactFormModel.email" required>
+            </div>
+            <div class="form-group">
+              <textarea class="neomorphic-input" rows="5" placeholder="Your Message" name="message" [(ngModel)]="contactFormModel.message" required></textarea>
+            </div>
+            <button type="submit" class="neomorphic-button submit-button" [disabled]="!contactForm.form.valid">Send Message</button>
+          </form>
+        </div>
+        <div class="col-md-6">
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><i class="fas fa-map-marker-alt"></i> Government Engineering College, Jhalawar, Rajasthan 326001</p>
+            <p><i class="fas fa-phone"></i> +91 7742979229</p>
+            <p><i class="fas fa-envelope"></i> principal&#64;jecj.ac.in</p>
+          </div>
+          <div class="map-container">
+            <!-- Updated Google Maps embed with marker for Government Engineering College Jhalawar -->
+            <iframe 
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3623.8664285410164!2d76.15934661499945!3d24.739916984106823!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3967b0e1c4e4e4d7%3A0x2e7b9a4b4e4b4b4b!2sGovernment%20Engineering%20College%2C%20Jhalawar!5e0!3m2!1sen!2sin!4v1625123456789!5m2!1sen!2sin&markers=color:red%7C24.739917,76.161535" 
+              width="100%" 
+              height="300" 
+              style="border:0;" 
+              allowfullscreen="" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

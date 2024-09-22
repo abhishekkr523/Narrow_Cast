@@ -1,19 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   isModalOpen: boolean = false;
   selectedCourse: string = '';
   selectedBranch: string = '';
 
-  constructor() { }
-
-  ngOnInit(): void {
-  }
+  constructor(private router: Router) { }
 
   openModal(): void {
     this.isModalOpen = true;
@@ -25,9 +23,10 @@ export class HomeComponent implements OnInit {
   }
 
   onSubmit(): void {
-    console.log('Form submitted');
-    console.log('Selected Course:', this.selectedCourse);
-    console.log('Selected Branch:', this.selectedBranch);
+    // if (this.selectedCourse && this.selectedBranch) {
+    console.log(this.selectedCourse, this.selectedBranch);
+      this.router.navigate(['skills-career'], {queryParams:{course:this.selectedCourse, branch:this.selectedBranch}});
+    // }
     this.closeModal();
   }
 

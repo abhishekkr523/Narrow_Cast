@@ -1,0 +1,106 @@
+.contact-container {
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.neomorphic-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  box-shadow: 
+    20px 20px 60px rgba(0, 0, 0, 0.5),
+    -20px -20px 60px rgba(255, 255, 255, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 1000px;
+  transition: all 0.3s ease;
+}
+
+.neomorphic-text {
+  color: #fff;
+  text-align: center;
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.neomorphic-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  color: #fff;
+  box-shadow: 
+    inset 8px 8px 16px rgba(0, 0, 0, 0.2),
+    inset -8px -8px 16px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-input:focus {
+  outline: none;
+  box-shadow: 
+    inset 12px 12px 20px rgba(0, 0, 0, 0.3),
+    inset -12px -12px 20px rgba(255, 255, 255, 0.1);
+}
+
+.neomorphic-button {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 15px;
+  padding: 12px 25px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.neomorphic-button:hover {
+  box-shadow: 
+    12px 12px 20px rgba(0, 0, 0, 0.4),
+    -12px -12px 20px rgba(255, 255, 255, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-info {
+  color: #fff;
+  margin-bottom: 30px;
+}
+
+.contact-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  margin-bottom: 10px;
+}
+
+.contact-info i {
+  margin-right: 10px;
+  color: #00ffff;
+}
+
+.map-container {
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 
+    8px 8px 16px rgba(0, 0, 0, 0.3),
+    -8px -8px 16px rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 768px) {
+  .neomorphic-card {
+    padding: 20px;
+  }
+}

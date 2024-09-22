@@ -28,7 +28,7 @@
         </li>
       </ul>
       <div class="auth-buttons">
-        <a class="nav-link login" routerLink="/login" routerLinkActive="active-link">Login</a>
+        <a class="nav-link login" routerLink="/login" [queryParams]="{mode: 'login'}" routerLinkActive="active-link">Login</a>
         <a class="nav-link signup" routerLink="/signup" routerLinkActive="active-link">Sign Up</a>
       </div>
     </div>

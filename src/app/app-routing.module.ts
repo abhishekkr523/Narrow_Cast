@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { SignupComponent } from './auth/signup.component';
 import { HomeComponent } from './home/home.component';
+import { SignupComponent } from './signup/signup.component';
+import { SkillsCareerComponent } from './skills-career/skills-career.component';
+import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'signup', component: SignupComponent },
-  // Add other routes here
-  { path: '', redirectTo: '/', pathMatch: 'full' }, // Redirect to signup by default
+  { path: 'login', component: SignupComponent },
+  { path: 'skills-career', component: SkillsCareerComponent },
+  { path: 'contact', component: ContactComponent },
+  { path: '', redirectTo: '/', pathMatch: 'full' },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, {
+    initialNavigation: 'enabledBlocking'
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
