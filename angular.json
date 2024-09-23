@@ -38,13 +38,9 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/azure-blue.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/@popperjs/core/dist/umd/popper.min.js",
-              "node_modules/bootstrap/dist/js/bootstrap.min.js"
-            ],
+            "scripts": [],
             "server": "src/main.server.ts",
             "prerender": true,
             "ssr": {
@@ -56,15 +52,14 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "850kb", 
-                  "maximumError": "900kb"
+                  "maximumWarning": "900kB",
+                  "maximumError": "1MB"
                 },
                 {
-                  "type": "initial",
-                  "maximumWarning": "5kb",  
-                  "maximumError": "6kb"      
-               }
-            
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kB",
+                  "maximumError": "7kB"
+                }
               ],
               "outputHashing": "all"
             },
@@ -111,25 +106,6 @@
             ],
             "scripts": []
           }
-        },
-        "server": {
-          "builder": "@angular-devkit/build-angular:server",
-          "options": {
-            "outputPath": "dist/narrowCast/server",
-            "main": "src/main.server.ts",
-            "tsConfig": "tsconfig.server.json"
-          },
-          "configurations": {
-            "production": {
-              "outputHashing": "media"
-            },
-            "development": {
-              "optimization": false,
-              "sourceMap": true,
-              "extractLicenses": false
-            }
-          },
-          "defaultConfiguration": "production"
         }
       }
     }
