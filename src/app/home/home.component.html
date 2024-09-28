@@ -20,24 +20,37 @@
     </div>
     <div class="modal-body">
       <form (ngSubmit)="onSubmit()">
-        <div class="form-group">
+        <!-- <div class="form-group">
           <label for="courseSelect">Select Course</label>
-          <select id="courseSelect" [(ngModel)]="selectedCourse" name="course" class="neomorphic-input">
-            <option value="">Choose a course...</option>
-            <option value="Computer Science">Computer Science</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Business">Business</option>
-            <option value="Medicine">Medicine</option>
-            <option value="Law">Law</option>
-            <option value="Arts and Humanities">Arts and Humanities</option>
-            <option value="Natural Sciences">Natural Sciences</option>
-            <option value="Social Sciences">Social Sciences</option>
+          <select id="courseSelect" [(ngModel)]="selectedCourse" name="course" class="neomorphic-input" *ngFor="let course of courses">
+            <option value="">{{ course }}</option>
+            
+          </select>
+        </div> -->
+        <div class="form-group">
+          <label for="courseSelect">Select Course{{ selectedCourse }}</label>
+          <select
+            id="courseSelect"
+            [(ngModel)]="selectedCourse"
+            name="course"
+            class="neomorphic-input"
+            (change)="onCourseChange()"
+          >
+            <option value="" disabled selected>Select a course</option>
+            <option *ngFor="let course of courses" [value]="course.id">
+              {{ course.course_name }}
+            </option>
           </select>
         </div>
+        
         <div class="form-group">
           <label for="branchSelect">Select Branch</label>
           <select id="branchSelect" [(ngModel)]="selectedBranch" name="branch" class="neomorphic-input">
-            <option value="">Choose a branch...</option>
+            <option value="" disabled selected>Choose a branch...</option>
+            <option *ngFor="let branch of branches" [value]="branch.id">
+              {{ branch.branch_name }}
+            </option>
+            <!-- <option value="">Choose a branch...</option>
             <option value="Software Development">Software Development</option>
             <option value="Data Science">Data Science</option>
             <option value="Artificial Intelligence">Artificial Intelligence</option>
@@ -46,8 +59,8 @@
             <option value="Mechanical Engineering">Mechanical Engineering</option>
             <option value="Electrical Engineering">Electrical Engineering</option>
             <option value="Civil Engineering">Civil Engineering</option>
-            <option value="Finance">Finance</option>
-            <option value="Marketing">Marketing</option>
+            <option value="Finance">Finance</option> -->
+            <!-- <option value="Marketing">Marketing</option> -->
           </select>
         </div>
         <div class="modal-footer">
@@ -102,4 +115,10 @@
     <h2>Start Your Journey with Narrow Cast</h2>
     <p>Explore your career options with AI-powered guidance and efficient learning tools.</p>
     <a href="#signup" class="signup-btn">Sign Up Now</a>
+</div>
+
+<!-- Display YouTube Data -->
+<div class="youtube-data">
+  <h2>YouTube Data</h2>
+  <pre>{{ youtubeData }}</pre>
 </div>
