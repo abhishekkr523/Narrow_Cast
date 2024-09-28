@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { SignupComponent } from './signup/signup.component';
 import { SkillsCareerComponent } from './skills-career/skills-career.component';
 import { ContactComponent } from './contact/contact.component';
+import { RoadmapComponent } from './roadmap/roadmap.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'skills-career', component: SkillsCareerComponent },
   { path: 'contact', component: ContactComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'roadmap', component: RoadmapComponent }
 ];
 
 @NgModule({

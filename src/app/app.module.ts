@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { SkillsCareerComponent } from './skills-career/skills-career.component';
 import { ContactComponent } from './contact/contact.component';
 import { YoutubeService } from './services/youtube.service';
+import { RoadmapComponent } from './roadmap/roadmap.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { YoutubeService } from './services/youtube.service';
     FooterComponent,
     HomeComponent,
     SkillsCareerComponent,
-    ContactComponent
+    ContactComponent,
+    RoadmapComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),

@@ -2,21 +2,48 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { RolesService } from '../services/roles.service';
 import { RoadmapService } from '../services/roadmap.service';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-skills-career',
   templateUrl: './skills-career.component.html',
-  styleUrls: ['./skills-career.component.css']
+  styleUrls: ['./skills-career.component.css'],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0 }),
+        animate('300ms', style({ opacity: 1 })),
+      ]),
+    ]),
+    trigger('scaleIn', [
+      transition(':enter', [
+        style({ transform: 'scale(0.5)', opacity: 0 }),
+        animate('300ms', style({ transform: 'scale(1)', opacity: 1 })),
+      ]),
+    ]),
+    trigger('slideIn', [
+      transition(':enter', [
+        style({ transform: 'translateY(50px)', opacity: 0 }),
+        animate('300ms', style({ transform: 'translateY(0)', opacity: 1 })),
+      ]),
+    ]),
+    trigger('fadeInUp', [
+      transition(':enter', [
+        style({ transform: 'translateY(20px)', opacity: 0 }),
+        animate('300ms', style({ transform: 'translateY(0)', opacity: 1 })),
+      ]),
+    ]),
+  ],
 })
 export class SkillsCareerComponent implements OnInit {
   selectedCourse!: number;
   selectedBranch!: number;
   selectedRole!: number;
+  visibility:boolean=true;
 
- 
-
-  roles: any[] = [];
-  roadmaps: any[] = [];
+  roles: any[] = []; // Your roles data
+  roadmaps: any[] = []; // Your roadmaps data
+  selectedRolem: any = null;
 
   constructor(private activatedRoute: ActivatedRoute,private roleService: RolesService,private roadmapService: RoadmapService,private router: Router,) {}
 
@@ -29,7 +56,7 @@ export class SkillsCareerComponent implements OnInit {
     });
 
     this.loadRoles();
-    this.getRoadmaps();
+    // this.getRoadmaps();
   }
 
   loadRoles(): void {
@@ -44,41 +71,79 @@ export class SkillsCareerComponent implements OnInit {
     );
   }
 
-  
+  // getRoadmaps(): void {
+  //   this.roadmapService.getRoadmapByCourseBranchRole(
+  //     this.selectedCourse,
+  //     this.selectedBranch,
+  //     this.selectedRole
+  //   ).subscribe(
+  //     (data) => {
+  //       // Convert object to array if needed
+  //       this.roadmaps = Array.isArray(data) ? data : [data];
 
-  getRoadmaps(): void {
-    this.roadmapService.getRoadmapByCourseBranchRole(
-      this.selectedCourse,
-      this.selectedBranch,
-      this.selectedRole
-    ).subscribe(
-      (data) => {
-        // Convert object to array if needed
-        this.roadmaps = Array.isArray(data) ? data : [data];
+  //       // Parse the steps for each roadmap
+  //       this.roadmaps = this.roadmaps.map((roadmap) => ({
+  //         ...roadmap,
+  //         steps: roadmap.steps ? JSON.parse(roadmap.steps) : [],
+  //       }));
 
-        // Parse the steps for each roadmap
-        this.roadmaps = this.roadmaps.map((roadmap) => ({
-          ...roadmap,
-          steps: roadmap.steps ? JSON.parse(roadmap.steps) : [],
-        }));
+  //       console.log('Roadmaps:', this.roadmaps);
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching roadmaps:', error);
+  //     }
+  //   );
+  // }
 
-        console.log('Roadmaps:', this.roadmaps);
-      },
-      (error) => {
-        console.error('Error fetching roadmaps:', error);
-      }
-    );
-  }
-
-   // Function to navigate with the role_id as a query parameter
-   navigateToRole(roleId: number): void {
-    this.router.navigate([], {
+  // Function to navigate with the role_id as a query parameter
+  // navigateToRole(roleId: number): void {
+  //   this.router.navigate([], {
+  //     queryParams: {
+  //       course: this.selectedCourse,
+  //       branch: this.selectedBranch,
+  //       role: roleId,
+  //     },
+  //     queryParamsHandling: 'merge', // This will keep the current query parameters and merge the new ones
+  //   });
+  //   this,this.visibility=false;
+  // }
+  navigateToRoadmap(roleId: number): void {
+    this.router.navigate(['/roadmap'], { // Update this route to match your roadmap component route
       queryParams: {
         course: this.selectedCourse,
         branch: this.selectedBranch,
         role: roleId,
       },
-      queryParamsHandling: 'merge', // This will keep the current query parameters and merge the new ones
     });
+    this.visibility = false; // Hide the roles section when navigating
+  }
+  
+
+  selectRole(role: any): void {
+    this.selectedRole = role;
+    // Here you would typically fetch the roadmaps for the selected role
+    // For now, we'll just use the existing roadmaps
+  }
+
+  deselectRole(): void {
+    this.selectedRolem = null;
+  }
+
+  getRoleIcon(roleName: string): string {
+    // Map role names to appropriate Font Awesome icons
+    const iconMap: { [key: string]: string } = {
+      'Developer': 'fas fa-code',
+      'Designer': 'fas fa-paint-brush',
+      'Manager': 'fas fa-tasks',
+      'Analyst': 'fas fa-chart-line',
+      // Add more mappings as needed
+    };
+
+    return iconMap[roleName] || 'fas fa-user-tie'; // Default icon
+  }
+
+  goBack(): void {
+    this.visibility = true;
+    // Clear any selected role or roadmap data if necessary
   }
 }
