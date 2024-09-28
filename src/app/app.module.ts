@@ -13,6 +13,9 @@ import { HomeComponent } from './home/home.component';
 import { SkillsCareerComponent } from './skills-career/skills-career.component';
 import { ContactComponent } from './contact/contact.component';
 import { YoutubeService } from './services/youtube.service';
+import { YoutubeVideosComponent } from './youtube-videos/youtube-videos.component';
+import {MatCardModule} from '@angular/material/card';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,8 @@ import { YoutubeService } from './services/youtube.service';
     FooterComponent,
     HomeComponent,
     SkillsCareerComponent,
-    ContactComponent
+    ContactComponent,
+    YoutubeVideosComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -30,7 +34,9 @@ import { YoutubeService } from './services/youtube.service';
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [YoutubeService],
   bootstrap: [AppComponent]
