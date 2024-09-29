@@ -1,6 +1,6 @@
 import { Component, OnInit, inject, computed } from '@angular/core';
 import { YoutubeVideosService } from '../services/youtube-videos.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-youtube-videos',
@@ -53,21 +53,30 @@ export class YoutubeVideosComponent implements OnInit {
   selectedRole!: number;
   selectRoadmapName :any;
 
-  constructor( private activatedRoute: ActivatedRoute,) {}
+  constructor( private activatedRoute: ActivatedRoute,private router: Router) {}
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {
       this.selectedCourse = params['course'];
       this.selectedBranch = params['branch'];
       this.selectedRole = params['role'];
-      this.selectRoadmapName = params['roadmapName'];
+      this.selectRoadmapName = params['roadmapId'];
     });
+    console.log("ttt",this.selectRoadmapName)
     // Initially fetch videos based on a search query, e.g., 'Angular tutorials'
-    this.searchVideos('this.selectRoadmapName');
-    // this.searchVideos('frontend');
+    // this.searchVideos('this.selectRoadmapName');
+    // Correctly pass the variable's value to the searchVideos method
+  if (this.selectRoadmapName) {
+    this.searchVideos(this.selectRoadmapName); // Remove quotes to pass the variable
+  } 
   }
 
   searchVideos(query: string): void {
     this.videoService.fetchVideos(query);
+  }
+
+
+  navigateForSummerize(){
+    this.router.navigate(['/summerizer'])
   }
 }

@@ -37,7 +37,7 @@
             (change)="onCourseChange()"
           >
             <option value="" disabled selected>Select a course</option>
-            <option *ngFor="let course of courses" [value]="course.id">
+            <option *ngFor="let course of staticCourseData" [value]="course.id">
               {{ course.course_name }}
             </option>
           </select>
@@ -47,7 +47,7 @@
           <label for="branchSelect">Select Branch</label>
           <select id="branchSelect" [(ngModel)]="selectedBranch" name="branch" class="neomorphic-input">
             <option value="" disabled selected>Choose a branch...</option>
-            <option *ngFor="let branch of branches" [value]="branch.id">
+            <option *ngFor="let branch of staticBranchData" [value]="branch.id">
               {{ branch.branch_name }}
             </option>
             <!-- <option value="">Choose a branch...</option>

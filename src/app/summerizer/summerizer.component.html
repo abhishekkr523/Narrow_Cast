@@ -1,0 +1,25 @@
+<div class="summerizer-container" [@fadeIn]>
+    <div class="neomorphic-card main-card">
+      <h2 class="neomorphic-text">Video Summarizer</h2>
+      <p class="subtitle">Get quick summaries of your favorite videos</p>
+  
+      <div class="input-container">
+        <input type="text" [(ngModel)]="videoUrl" placeholder="Enter YouTube video URL" class="neomorphic-input">
+        <button (click)="summarizeVideo()" class="neomorphic-button">Summarize</button>
+      </div>
+  
+      <div *ngIf="summary" class="summary-container" [@slideIn]>
+        <h3>Summary</h3>
+        <p>{{ summary }}</p>
+      </div>
+  
+      <div *ngIf="loading" class="loading-container">
+        <div class="loading-spinner"></div>
+        <p>Generating summary...</p>
+      </div>
+  
+      <div *ngIf="error" class="error-container" [@fadeIn]>
+        <p>{{ error }}</p>
+      </div>
+    </div>
+  </div>

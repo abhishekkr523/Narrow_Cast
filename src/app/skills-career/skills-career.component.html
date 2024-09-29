@@ -6,7 +6,13 @@
       <div class="neomorphic-card sub-card">
         <h4 class="section-title">Roles in this field</h4>
         <div class="roles-grid">
-          <div *ngFor="let role of roles" class="role-item" (click)="navigateToRoadmap(role.id, role.role_name)">
+          <!-- <div *ngFor="let role of staticRoles" class="role-item" (click)="navigateToRoadmap(role.id, role.role_name)">
+            <div class="role-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <span class="role-name">{{ role.role_name }}</span>
+          </div> -->
+          <div *ngFor="let role of staticRoles" class="role-item" (click)="navigateToRoadmap(role.role_id, role.role_name)">
             <div class="role-icon">
               <i class="fas fa-user-tie"></i>
             </div>

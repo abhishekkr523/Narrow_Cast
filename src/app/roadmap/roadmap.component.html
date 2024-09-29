@@ -1,10 +1,10 @@
-<div class="roadmap-container" [@fadeIn] style="color:#fff">
+<div class="roadmap-container" [@fadeIn] style="color: #fff">
   <div class="neomorphic-card main-card">
-    <h2 class="neomorphic-text" >Your Career Roadmap</h2>
+    <h2 class="neomorphic-text">Your Career Roadmap</h2>
     <button class="back-button" (click)="goBack()">
       <i class="fas fa-arrow-left"></i> Back to Roles
     </button>
-    
+
     <div *ngIf="roadmaps.length > 0; else noData">
       <div *ngFor="let roadmap of roadmaps" class="roadmap-item" [@slideIn]>
         <h3 class="roadmap-title">
@@ -13,7 +13,11 @@
         </h3>
         <p class="roadmap-description">{{ roadmap.description }}</p>
         <div *ngIf="roadmap.steps.length > 0" class="roadmap-steps">
-          <div *ngFor="let step of roadmap.steps" class="roadmap-step" [@fadeInUp]>
+          <div
+            *ngFor="let step of roadmap.steps"
+            class="roadmap-step"
+            [@fadeInUp]
+          >
             <div class="step-number">{{ step.step_number }}</div>
             <div class="step-content">
               <h4 class="step-title">Step {{ step.step_number }}</h4>
@@ -21,10 +25,45 @@
             </div>
           </div>
         </div>
-        <div class="get_video" (click)="navigateToRoadmap(roadmap.id)" style="color:blue">Go for recommended Videos</div>
+        <div
+          class="get_video"
+          (click)="navigateToRoadmap(roadmap.id)"
+          style="color: blue"
+        >
+          Go for recommended Videos
+        </div>
+        <div class="sumerizer" (click)="navigateForSummerize()">
+          use summerizer
+        </div>
       </div>
     </div>
-    
+
+    <div *ngIf="staticRoadmaps.length > 0" class="xyz">
+      <h2>{{ staticRoadmaps[0].roadmap_name }}</h2>
+      <!-- Display the roadmap name -->
+
+      <h3>Steps:</h3>
+      <ul>
+        <li *ngFor="let step of staticRoadmaps[0].steps">
+          Step {{ step.step_number }}: {{ step.description }}
+        </li>
+      </ul>
+      <div
+        class="get_video"
+        (click)="navigateToRoadmap(staticRoadmaps[0].roadmap_name)"
+        style="color: blue"
+      >
+        Go for recommended Videos
+      </div>
+      <div
+        class="get_video"
+        (click)="navigateForSummerize()"
+        style="color: blue"
+      >
+        Go for Summerize the videos
+      </div>
+    </div>
+
     <ng-template #noData>
       <div class="no-data" [@fadeIn]>
         <i class="fas fa-exclamation-circle"></i>

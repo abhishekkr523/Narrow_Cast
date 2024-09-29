@@ -1,7 +1,8 @@
 <div class="parent" *ngIf="loading === false">
   <div class="videos">
     <div class="video" *ngFor="let video of videos()">
-      <img
+      <img 
+        (click)="navigateForSummerize()"
         class="thumbnail"
         matCardImage
         [src]="video?.snippet?.thumbnails?.medium?.url"

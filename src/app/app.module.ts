@@ -18,6 +18,7 @@ import { YoutubeVideosComponent } from './youtube-videos/youtube-videos.componen
 import {MatCardModule} from '@angular/material/card';
 // import { FormsModule } from '@angular/forms';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { SummerizerComponent } from './summerizer/summerizer.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
     SkillsCareerComponent,
     ContactComponent,
     RoadmapComponent,
-    YoutubeVideosComponent
+    YoutubeVideosComponent,
+    SummerizerComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
