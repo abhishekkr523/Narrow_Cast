@@ -32,6 +32,7 @@ export class RoadmapComponent implements OnInit {
   selectedCourse!: number;
   selectedBranch!: number;
   selectedRole!: number;
+  selectedRolename!: string;
   roadmaps: any[] = [];
 
   constructor(
@@ -45,6 +46,7 @@ export class RoadmapComponent implements OnInit {
       this.selectedCourse = params['course'];
       this.selectedBranch = params['branch'];
       this.selectedRole = params['role'];
+      this.selectedRolename = params['roleName'];
       this.getRoadmaps();
     });
   }
@@ -76,5 +78,20 @@ export class RoadmapComponent implements OnInit {
         branch: this.selectedBranch,
       },
     });
+  }
+
+
+  navigateToRoadmap(roadmapId: number): void {
+    this.router.navigate(['/youtube-videos'], { // Update this route to match your roadmap component route
+      queryParams: {
+        course: this.selectedCourse,
+        branch: this.selectedBranch,
+        role: this.selectedRole,
+        roadmapId: roadmapId,
+        roadmapName: this.selectedRolename
+
+
+      },
+    }); // Hide the roles section when navigating
   }
 }

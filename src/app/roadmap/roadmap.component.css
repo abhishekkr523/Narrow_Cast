@@ -161,6 +161,45 @@
   margin-bottom: 20px;
 }
 
+.get_video {
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  color: var(--text-color);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-top: 20px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 
+    4px 4px 8px rgba(0, 0, 0, 0.2),
+    -4px -4px 8px rgba(255, 255, 255, 0.1);
+}
+
+.get_video:hover {
+  transform: translateY(-3px);
+  box-shadow: 
+    6px 6px 12px rgba(0, 0, 0, 0.3),
+    -6px -6px 12px rgba(255, 255, 255, 0.2);
+}
+
+.get_video:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    2px 2px 4px rgba(0, 0, 0, 0.2),
+    -2px -2px 4px rgba(255, 255, 255, 0.1);
+}
+
+.get_video::before {
+  content: '\f16a'; /* YouTube icon */
+  font-family: 'Font Awesome 5 Brands';
+  margin-right: 10px;
+}
+
 @media (max-width: 768px) {
   .neomorphic-text {
     font-size: 28px;
@@ -180,5 +219,10 @@
 
   .step-description {
     font-size: 12px;
+  }
+
+  .get_video {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 }

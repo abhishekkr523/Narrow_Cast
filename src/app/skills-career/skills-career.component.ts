@@ -71,48 +71,15 @@ export class SkillsCareerComponent implements OnInit {
     );
   }
 
-  // getRoadmaps(): void {
-  //   this.roadmapService.getRoadmapByCourseBranchRole(
-  //     this.selectedCourse,
-  //     this.selectedBranch,
-  //     this.selectedRole
-  //   ).subscribe(
-  //     (data) => {
-  //       // Convert object to array if needed
-  //       this.roadmaps = Array.isArray(data) ? data : [data];
 
-  //       // Parse the steps for each roadmap
-  //       this.roadmaps = this.roadmaps.map((roadmap) => ({
-  //         ...roadmap,
-  //         steps: roadmap.steps ? JSON.parse(roadmap.steps) : [],
-  //       }));
-
-  //       console.log('Roadmaps:', this.roadmaps);
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching roadmaps:', error);
-  //     }
-  //   );
-  // }
-
-  // Function to navigate with the role_id as a query parameter
-  // navigateToRole(roleId: number): void {
-  //   this.router.navigate([], {
-  //     queryParams: {
-  //       course: this.selectedCourse,
-  //       branch: this.selectedBranch,
-  //       role: roleId,
-  //     },
-  //     queryParamsHandling: 'merge', // This will keep the current query parameters and merge the new ones
-  //   });
-  //   this,this.visibility=false;
-  // }
-  navigateToRoadmap(roleId: number): void {
+  
+  navigateToRoadmap(roleId: number,roleName: string): void {
     this.router.navigate(['/roadmap'], { // Update this route to match your roadmap component route
       queryParams: {
         course: this.selectedCourse,
         branch: this.selectedBranch,
         role: roleId,
+        roleName: roleName,
       },
     });
     this.visibility = false; // Hide the roles section when navigating

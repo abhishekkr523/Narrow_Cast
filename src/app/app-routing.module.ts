@@ -5,6 +5,7 @@ import { SignupComponent } from './signup/signup.component';
 import { SkillsCareerComponent } from './skills-career/skills-career.component';
 import { ContactComponent } from './contact/contact.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
+import { YoutubeVideosComponent } from './youtube-videos/youtube-videos.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'login', component: SignupComponent },
   { path: 'skills-career', component: SkillsCareerComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'youtube-videos', component: YoutubeVideosComponent },
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: 'roadmap', component: RoadmapComponent }
 ];

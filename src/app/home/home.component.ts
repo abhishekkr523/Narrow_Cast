@@ -23,23 +23,7 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
 
     this.loadCourses();
-    // this.loadBranches();
-    // this.youtubeService.getYoutubeData().subscribe(
-    //   data => this.youtubeData = data,
-    //   error => console.error('Error fetching YouTube data', error)
-    // );
 
-    // this.youtubeService.getYoutubeData(link).subscribe((res: any) => {
-    //   debugger;
-    //   if (res) {
-    //     alert("save successful.");
-    //     // this.getProducts();
-    //     console.log("jj", res)
-    //   } else {
-    //     alert("An error occurred.");
-    //   }
-    // })
-    
   }
 
 
@@ -64,9 +48,6 @@ export class HomeComponent implements OnInit {
     this.selectedCourse = '';
     this.selectedBranch = '';
   }
-
-
-
 
 
   // Load courses from the API

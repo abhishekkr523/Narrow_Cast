@@ -1,0 +1,35 @@
+.parent {
+
+    .videos {
+        display: grid;
+        /* repeate items after each three elements */
+        grid-template-columns: repeat(3, 1fr);
+        margin: 20px;
+
+        .video {
+            height: auto;
+            width: 300px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: column;
+            margin: 10px;
+
+            .thumbnail {
+                width: 300px;
+                background-color: #f4f4f4;
+            }
+
+            .title{ 
+                color: white;
+                font-size: 1.2rem;
+                font-weight: 400;
+            }
+            .published {
+                color: #777;
+                font-size: 0.8rem;
+                font-weight: 300;
+            }
+        }
+    }
+}

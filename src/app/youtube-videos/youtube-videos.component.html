@@ -1,0 +1,17 @@
+<div class="parent" *ngIf="loading === false">
+  <div class="videos">
+    <div class="video" *ngFor="let video of videos()">
+      <img
+        class="thumbnail"
+        matCardImage
+        [src]="video?.snippet?.thumbnails?.medium?.url"
+        alt="Video Thumbnail"
+        width="300px"
+      />
+      <div class="title">{{ video?.snippet?.title }}</div>
+      <p class="published">{{ video?.snippet?.publishedAt | date }}</p>
+    </div>
+  </div>
+</div>
+
+<mat-spinner *ngIf="loading === true" style="position: fixed; top: 50vh; right: 50vw;"></mat-spinner>

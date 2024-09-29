@@ -14,6 +14,10 @@ import { SkillsCareerComponent } from './skills-career/skills-career.component';
 import { ContactComponent } from './contact/contact.component';
 import { YoutubeService } from './services/youtube.service';
 import { RoadmapComponent } from './roadmap/roadmap.component';
+import { YoutubeVideosComponent } from './youtube-videos/youtube-videos.component';
+import {MatCardModule} from '@angular/material/card';
+// import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -24,7 +28,8 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
     HomeComponent,
     SkillsCareerComponent,
     ContactComponent,
-    RoadmapComponent
+    RoadmapComponent,
+    YoutubeVideosComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
@@ -32,7 +37,9 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
     BrowserAnimationsModule,
     MatIconModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatProgressSpinnerModule
   ],
   providers: [YoutubeService],
   bootstrap: [AppComponent]
